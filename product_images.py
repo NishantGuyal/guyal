@@ -4,10 +4,8 @@ import requests
 from urllib.parse import urlparse
 from pathlib import Path
 
-# Load your Excel file
-df = pd.read_csv("products_images.csv")  # Replace with your actual file path
+df = pd.read_csv("products_images.csv")
 
-# Iterate over rows
 for index, row in df.iterrows():
     sku = str(row.get("SKU"))
     image_url = row.get("Image Url")
@@ -16,7 +14,7 @@ for index, row in df.iterrows():
         print(f"Error in SKU {sku}")
         continue
 
-    image_url = str(image_url).strip()  # Ensure it's a string
+    image_url = str(image_url).strip() 
 
     folder_path = Path(f"images/{sku}")
     folder_path.mkdir(parents=True, exist_ok=True)
