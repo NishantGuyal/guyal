@@ -14,7 +14,7 @@ for index, row in df.iterrows():
         print(f"Error in SKU {sku}")
         continue
 
-    image_url = str(image_url).strip() 
+    image_url = str(image_url).strip()
 
     folder_path = Path(f"images/{sku}")
     folder_path.mkdir(parents=True, exist_ok=True)

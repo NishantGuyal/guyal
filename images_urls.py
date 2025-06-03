@@ -4,7 +4,6 @@ df = pd.read_csv("products_images.csv")
 
 base_url = "https://nishantguyal.github.io/guyal"
 
-
 df["Image URL"] = df["SKU"].apply(
     lambda sku: f"{base_url}/{sku}/{sku}.jpg" if pd.notna(sku) else ""
 )
